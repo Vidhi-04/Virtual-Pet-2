@@ -41,8 +41,21 @@ function draw() {
   fedTime.on("value",function(data){
     lastFed=data.val();
   });
- 
-  fill(255,255,254);
+   currentTime=hour();
+  if(currentTime==(lastFed+1)){
+      update("Playing");
+      foodObj.garden();
+   }else if(currentTime==(lastFed+2)){
+    update("Sleeping");
+      foodObj.bedroom();
+   }else if(currentTime>(lastFed+2) && currentTime<=(lastFed+4)){
+    update("Bathing");
+      foodObj.washroom();
+   }else{
+    update("Hungry")
+    foodObj.display();
+   }
+ /* fill(255,255,254);
   textSize(15);
   if(lastFed>=12){
     text("Last Feed : "+ lastFed%12 + " PM", 350,30);
@@ -50,7 +63,7 @@ function draw() {
      text("Last Feed : 12 AM",350,30);
    }else{
      text("Last Feed : "+ lastFed + " AM", 350,30);
-   }
+   }*/
 foodObj.display();
 }
 
