@@ -8,7 +8,7 @@ var foodCount, milkImg;
 function preload()
 {
 	dogImage = loadImage("Dog.png")
-  happyDogImage = loadImage("happyDog.png")
+  happyDogImage = loadImage("happydog.png")
   milkImg = loadImage("Milk.png")
 }
 
